@@ -13,3 +13,8 @@ sudo tail -f /var/log/nginx/api-nginx.frontend_upstream.log
 
 scp /path/to/file.deb username@server-ip:/destination/path/
 #transfer files to linux
+
+openssl pkcs12 -in certificate.pfx -clcerts -nokeys -out certificate.crt
+openssl pkcs12 -in certificate.pfx -nocerts -nodes -out private.key
+openssl pkcs12 -in certificate.pfx -cacerts -nokeys -out ca.crt
+#extract crt,ca and key files
