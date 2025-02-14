@@ -11,3 +11,5 @@ sudo tail -f /var/log/nginx/api-nginx.frontend_upstream.log
 #-f (follow) keeps the output live, updating as new log entries are added.
 #/var/log/nginx/api-nginx.frontend_upstream.log: The log file being monitored.
 
+scp /path/to/file.deb username@server-ip:/destination/path/
+#transfer files to linux
