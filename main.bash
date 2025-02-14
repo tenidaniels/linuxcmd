@@ -22,3 +22,16 @@ openssl pkcs12 -in certificate.pfx -cacerts -nokeys -out ca.crt
 sudo mkdir -p /etc/nginx/ssl
 #-p: Ensures the directory is created if it doesn’t exist (prevents errors if it already exists).
 #/etc/nginx/ssl: The directory where SSL certificate files will be stored.
+
+sudo chmod 600 /etc/nginx/ssl/*
+#chmod: Changes file permissions.
+#600: Sets the permissions so that:
+#Owner (root) can read and write (rw-).
+#Others (group & world) have no access (---).
+#*: Applies the permission change to all files in /etc/nginx/ssl/.
+
+sudo chown root:root /etc/nginx/ssl/*
+#chown root:root /etc/nginx/ssl/*:
+#chown: Changes ownership of a file.
+#root:root: Sets both the owner and group to root.
+#*: Applies to all files in /etc/nginx/ssl/.
