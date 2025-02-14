@@ -18,3 +18,7 @@ openssl pkcs12 -in certificate.pfx -clcerts -nokeys -out certificate.crt
 openssl pkcs12 -in certificate.pfx -nocerts -nodes -out private.key
 openssl pkcs12 -in certificate.pfx -cacerts -nokeys -out ca.crt
 #extract crt,ca and key files
+
+sudo mkdir -p /etc/nginx/ssl
+#-p: Ensures the directory is created if it doesn’t exist (prevents errors if it already exists).
+#/etc/nginx/ssl: The directory where SSL certificate files will be stored.
